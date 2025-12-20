@@ -12,13 +12,7 @@ stages:
     - task: TerraformInstaller@1
       inputs:
         terraformVersion: 'latest'
-    - task: TerraformTask@5
+    - task: tfsec@1
       inputs:
-        provider: 'azurerm'
-        command: 'init'
-        backendServiceArm: 'ConnectionForInfra'
-        backendAzureRmOverrideSubscriptionID: 'ba0b20ad-8e5c-46a3-935a-06c38c9ce67e'
-        backendAzureRmResourceGroupName: 'tolu-rg'
-        backendAzureRmStorageAccountName: 'tolustorage1234'
-        backendAzureRmContainerName: 'tolucon'
-        backendAzureRmKey: 'dev.terraform.tfstate'
+        version: 'v1.26.0'
+        dir: 'https://github.com/kishorr4/Assignment_Repo'
